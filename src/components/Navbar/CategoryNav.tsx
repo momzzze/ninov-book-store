@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import "./CategoryNav.css";
 import { useSelector } from "react-redux";
 import { AuthState } from "../../state";
+import closeMenu from "../../assets/close_FILL0_wght400_GRAD0_opsz48.svg";
 
 interface CategoryNavProps {
   handleMenuButton: () => void;
@@ -18,7 +19,7 @@ const CategoryNav = ({ handleMenuButton, showSidebar }:CategoryNavProps) => {
           <button className="btn-close" onClick={handleMenuButton}>
             {" "}
             <img
-              src="/src/assets/close_FILL0_wght400_GRAD0_opsz48.svg"
+              src={closeMenu}
               alt="menu"
             />
           </button>

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AuthState, setLogout } from "../../state";
 import CategoryNav from "./CategoryNav";
 import logo from "../../assets/logo-icon.png";
+import openMenu from "../../assets/menu_FILL0_wght400_GRAD0_opsz48.svg";
 
 function Navigation() {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -32,7 +33,7 @@ function Navigation() {
           </Link>
           <button className="btn-menu" onClick={handleMenuButton}>
             <img
-              src="/src/assets/menu_FILL0_wght400_GRAD0_opsz48.svg"
+              src={openMenu}
               alt="menu"
             />
           </button>
