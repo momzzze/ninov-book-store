@@ -1,7 +1,10 @@
 import { Link,NavLink } from "react-router-dom";
 import "./CategoryNav.css";
+import { useSelector } from "react-redux";
 
 const CategoryNav = ({ handleMenuButton, showSidebar }) => {
+    const user = useSelector((state) => state.user);
+    
   return (
     <>
       <nav className={`sidebar ${showSidebar ? "show" : ""}`}>
@@ -31,7 +34,7 @@ const CategoryNav = ({ handleMenuButton, showSidebar }) => {
           <li><NavLink  to="/best-sellers">BEST SELLERS</NavLink></li>
           <li><NavLink  to="/about">ABOUT</NavLink></li>
           <li><NavLink  to="/contacts">CONTACT</NavLink></li> 
-          <li><NavLink  to="/admin-dashboard">ADMIN</NavLink></li>                   
+        {user?.role=== 'admin' &&(<li><NavLink  to="/admin-dashboard">ADMIN</NavLink></li>)}                   
         </ul>
       </div>
     </>

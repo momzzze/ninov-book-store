@@ -62,6 +62,9 @@ ul.container a {
   display: block;
   animation: slideIn 0.1s linear forwards;
 }
+.sidebar.closing {
+    animation: slideOut 0.1s linear forwards;
+  }
 @keyframes slideIn {
   from {
     transform: translateX(100%);
@@ -70,6 +73,14 @@ ul.container a {
     transform: translateX(0);
   }
 }
+@keyframes slideOut {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
 
 .sidebar ul {
   flex-direction: column;

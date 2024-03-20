@@ -7,6 +7,7 @@ import CategoryNav from "./CategoryNav";
 
 function Navigation() {
   const [showSidebar, setShowSidebar] = useState(false);
+  
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
