@@ -1,9 +1,15 @@
-import { Link,NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./CategoryNav.css";
 import { useSelector } from "react-redux";
+import { AuthState } from "../../state";
 
-const CategoryNav = ({ handleMenuButton, showSidebar }) => {
-    const user = useSelector((state) => state.user);
+interface CategoryNavProps {
+  handleMenuButton: () => void;
+  showSidebar: boolean;
+}
+
+const CategoryNav = ({ handleMenuButton, showSidebar }:CategoryNavProps) => {
+    const user = useSelector((state:AuthState) => state.user);
     
   return (
     <>

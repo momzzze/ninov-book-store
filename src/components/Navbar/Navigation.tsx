@@ -2,21 +2,19 @@ import { Link } from "react-router-dom";
 import "./Navigation.css";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setLogout } from "../../state";
+import { AuthState, setLogout } from "../../state";
 import CategoryNav from "./CategoryNav";
 
 function Navigation() {
   const [showSidebar, setShowSidebar] = useState(false);
-  
-  const user = useSelector((state) => state.user);
+
+  const user = useSelector((state: AuthState) => state.user);
   const dispatch = useDispatch();
 
-  const handleSearchButton = (e) => {
-    console.log(e);
+  const handleSearchButton = (e:React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
   };
   const handleMenuButton = () => {
-    console.log(showSidebar);
-
     setShowSidebar(!showSidebar);
   };
   const handleLogout = () => {
@@ -46,7 +44,7 @@ function Navigation() {
               className="search-field"
               type="text"
               placeholder="Search"
-              onChange={(e) => handleSearchButton(e.target.value)}
+              onChange={handleSearchButton}
             />
           </div>
           <button className="btn-profile">
