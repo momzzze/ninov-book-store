@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AuthState, setLogout } from "../../state";
 import CategoryNav from "./CategoryNav";
+import logo from "../../assets/logo-icon.png";
 
 function Navigation() {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -26,7 +27,7 @@ function Navigation() {
       <nav className="container navigation">
         <div className="left_nav_side">
           <Link className="nav-btn btn-logo" to="/">
-            <img src="/src/assets/logo-icon.png" alt="logo" />
+            <img src={logo} alt="logo" />
             NinovStore
           </Link>
           <button className="btn-menu" onClick={handleMenuButton}>
