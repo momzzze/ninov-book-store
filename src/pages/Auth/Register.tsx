@@ -5,6 +5,7 @@ import { z } from "zod";
 import { registerUser } from "../../services/user.services";
 import { useDispatch } from "react-redux";
 import { setLogin } from "../../state";
+import { useNavigate } from "react-router-dom";
 
 const registerSchema = z.object({
   username: z.string().min(3),
@@ -25,7 +26,7 @@ const Register: React.FC = () => {
     resolver: zodResolver(registerSchema),
   });
   const dispatch = useDispatch();
-
+  const redirect=useNavigate();
   const registerHandler: SubmitHandler<Inputs> = async (data: Inputs) => {
     try {
       const response = await registerUser(data);
@@ -41,6 +42,8 @@ const Register: React.FC = () => {
           throw new Error(response.message);
         }
       }
+      console.log(response);
+      
       dispatch(
         setLogin({
           user: {
@@ -51,6 +54,7 @@ const Register: React.FC = () => {
           token: response.token,
         })
       );
+      redirect("/");
     } catch (error) {
       const typedError = error as Error;
       setError("root", { message: typedError.message });
