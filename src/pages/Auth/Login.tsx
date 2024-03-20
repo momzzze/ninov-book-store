@@ -5,6 +5,7 @@ import { setLogin } from "../../state";
 import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import "./auth.css";
 
 const loginSchema = z.object({
   email: z.string().email(),
@@ -28,7 +29,6 @@ const Login: React.FC = () => {
   const onSubmit: SubmitHandler<Inputs> = async (data: Inputs) => {
     try {
       const response = await loginUser(data);
-      console.log(response);
       if (!response.message) {
         dispatch(
           setLogin({
@@ -50,22 +50,35 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="">
-      <form onSubmit={handleSubmit(onSubmit)} className="">
-        <div>
-          <label htmlFor="email">Email</label>
-          <input type="email" {...register("email")} placeholder="Email" />
-          {errors.email && <p>{errors.email.message}</p>}
+    <div className="position__middle">
+      <div className="position__container">
+        <div className="left-side-container">
+          <h2 className="login-header">LOGIN</h2>
         </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input type="password" {...register("password")} />
-        </div>
-        <button disabled={isSubmitting} type="submit">
-          {isSubmitting ? "Loading..." : "Submit"}
-        </button>
-        {errors.root && <p>{errors.root.message}</p>}
-      </form>
+        <form onSubmit={handleSubmit(onSubmit)} className="form-container">
+          <div className="form-item">
+            <label htmlFor="email">Email</label>
+            <input type="email" {...register("email")} placeholder="Email" />
+            {errors.email && <p>{errors.email.message}</p>}
+          </div>
+          <div className="form-item">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              {...register("password")}
+              placeholder="Password"
+            />
+          </div>
+          <button
+            className="submit-auth-button"
+            disabled={isSubmitting}
+            type="submit"
+          >
+            {isSubmitting ? "Loading..." : "Submit"}
+          </button>
+          {errors.root && <p>{errors.root.message}</p>}
+        </form>
+      </div>
     </div>
   );
 };

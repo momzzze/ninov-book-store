@@ -6,6 +6,7 @@ import { registerUser } from "../../services/user.services";
 import { useDispatch } from "react-redux";
 import { setLogin } from "../../state";
 import { useNavigate } from "react-router-dom";
+import "./auth.css";
 
 const registerSchema = z.object({
   username: z.string().min(3),
@@ -26,7 +27,7 @@ const Register: React.FC = () => {
     resolver: zodResolver(registerSchema),
   });
   const dispatch = useDispatch();
-  const redirect=useNavigate();
+  const redirect = useNavigate();
   const registerHandler: SubmitHandler<Inputs> = async (data: Inputs) => {
     try {
       const response = await registerUser(data);
@@ -43,7 +44,7 @@ const Register: React.FC = () => {
         }
       }
       console.log(response);
-      
+
       dispatch(
         setLogin({
           user: {
@@ -62,39 +63,48 @@ const Register: React.FC = () => {
   };
 
   return (
-    <div className="">
-      <form className="" onSubmit={handleSubmit(registerHandler)}>
-        <div>
-          <label htmlFor="username">Username</label>
-          <input type="text" {...register("username")} placeholder="username" />
-          {errors.username && <p>{errors.username.message}</p>}
+    <div className="position__middle">
+      <div className="position__container">
+      <div className="left-side-container">
+          <h2 className="login-header">REGISTER</h2>
         </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input type="email" {...register("email")} placeholder="email" />
-          {errors.email && <p>{errors.email.message}</p>}
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            {...register("password")}
-            placeholder="Password"
-          />
-        </div>
-        <div>
-          <label htmlFor="rePassword">Confirm Password</label>
-          <input
-            type="password"
-            {...register("rePassword")}
-            placeholder="Confirm Password"
-          />
-        </div>
-        <button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? "Loading..." : "Register"}
-        </button>
-        {errors.root && <p>{errors.root.message}</p>}
-      </form>
+        <form  className="form-container" onSubmit={handleSubmit(registerHandler)}>
+          <div  className="form-item">
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              {...register("username")}
+              placeholder="username"
+            />
+            {errors.username && <p>{errors.username.message}</p>}
+          </div>
+          <div  className="form-item">
+            <label htmlFor="email">Email</label>
+            <input type="email" {...register("email")} placeholder="email" />
+            {errors.email && <p>{errors.email.message}</p>}
+          </div>
+          <div  className="form-item">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              {...register("password")}
+              placeholder="Password"
+            />
+          </div>
+          <div  className="form-item">
+            <label htmlFor="rePassword">Confirm Password</label>
+            <input
+              type="password"
+              {...register("rePassword")}
+              placeholder="Confirm Password"
+            />
+          </div>
+          <button className="submit-auth-button" type="submit" disabled={isSubmitting}>
+            {isSubmitting ? "Loading..." : "Register"}
+          </button>
+          {errors.root && <p>{errors.root.message}</p>}
+        </form>
+      </div>
     </div>
   );
 };
