@@ -26,7 +26,7 @@ function Navigation() {
       <nav className="container navigation">
         <div className="left_nav_side">
           <Link className="nav-btn btn-logo" to="/">
-            <img src="/public/logo-icon.png" alt="logo" />
+            <img src="/src/assets/logo-icon.png" alt="logo" />
             NinovStore
           </Link>
           <button className="btn-menu" onClick={handleMenuButton}>
