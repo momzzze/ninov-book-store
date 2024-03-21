@@ -81,6 +81,11 @@
   padding: 1rem;
   width: 100%;
 }
+.error-message{
+    color: red;
+    font-size: 0.8rem;
+    text-align: center;    
+}
 
 @media screen and (max-width: 450px) {
     .position__container {

@@ -76,12 +76,12 @@ const Register: React.FC = () => {
               {...register("username")}
               placeholder="username"
             />
-            {errors.username && <p>{errors.username.message}</p>}
+            {errors.username && <p className="error-message">{errors.username.message}</p>}
           </div>
           <div  className="form-item">
             <label htmlFor="email">Email</label>
             <input type="email" {...register("email")} placeholder="email" />
-            {errors.email && <p>{errors.email.message}</p>}
+            {errors.email && <p className="error-message">{errors.email.message}</p>}
           </div>
           <div  className="form-item">
             <label htmlFor="password">Password</label>
@@ -102,7 +102,7 @@ const Register: React.FC = () => {
           <button className="submit-auth-button" type="submit" disabled={isSubmitting}>
             {isSubmitting ? "Loading..." : "Register"}
           </button>
-          {errors.root && <p>{errors.root.message}</p>}
+          {errors.root && <p className="error-message">{errors.root.message}</p>}
         </form>
       </div>
     </div>

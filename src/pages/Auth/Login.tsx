@@ -59,7 +59,7 @@ const Login: React.FC = () => {
           <div className="form-item">
             <label htmlFor="email">Email</label>
             <input type="email" {...register("email")} placeholder="Email" />
-            {errors.email && <p>{errors.email.message}</p>}
+            {errors.email && <p className="error-message">{errors.email.message}</p>}
           </div>
           <div className="form-item">
             <label htmlFor="password">Password</label>
@@ -76,7 +76,7 @@ const Login: React.FC = () => {
           >
             {isSubmitting ? "Loading..." : "Submit"}
           </button>
-          {errors.root && <p>{errors.root.message}</p>}
+          {errors.root && <p className="error-message">{errors.root.message}</p>}
         </form>
       </div>
     </div>
