@@ -13,7 +13,7 @@ function Navigation() {
   const user = useSelector((state: AuthState) => state.user);
   const dispatch = useDispatch();
 
-  const handleSearchButton = (e:React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchButton = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);
   };
   const handleMenuButton = () => {
@@ -32,15 +32,12 @@ function Navigation() {
             NinovStore
           </Link>
           <button className="btn-menu" onClick={handleMenuButton}>
-            <img
-              src={openMenu}
-              alt="menu"
-            />
+            <img src={openMenu} alt="menu" />
           </button>
         </div>
 
         <div className="nav_right">
-          <div className="navigation-search-container">
+          <div className="navigation-search-container">   
             <i className={`fa fa-search`}></i>
             <input
               className="search-field"

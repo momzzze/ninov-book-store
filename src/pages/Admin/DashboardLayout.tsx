@@ -1,9 +1,11 @@
 import { Outlet } from "react-router-dom";
 import "./Dashboard.css";
+import Sidebar from "./Sidebar";
 
 const DashboardLayout = () => {
   return (
-    <div>
+    <div className="dashboard-layout">
+      <Sidebar />
       <Outlet />
     </div>
   );

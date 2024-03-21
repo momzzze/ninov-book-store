@@ -1,6 +1,8 @@
+import './Dashboard.css';
+
 const UploadBook = () => {
   return (
-    <div>UploadBook</div>
+    <div  className="container__dashboard">UploadBook</div>
   )
 }
 

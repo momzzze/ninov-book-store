@@ -1,7 +1,10 @@
+import './Dashboard.css';
 
 const ManageBooks = () => {
   return (
-    <div>ManageBooks</div>
+    <div className="container__dashboard">
+        ManageBooks
+    </div>
   )
 }
 

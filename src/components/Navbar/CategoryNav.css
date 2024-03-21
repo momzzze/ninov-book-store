@@ -126,4 +126,5 @@ ul.container a {
 .active {
     background-color: var(--classic-blue-700);
     font-weight: bold;
+    color: white;
   }

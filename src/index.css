@@ -47,6 +47,11 @@
   --gold-700: #b8860b;
   --gold-800: #cd8500;
   --gold-900: #8b5a00;
+
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.5s ease;
 }
 
 * {
@@ -69,6 +74,7 @@ a {
   /* width: 80vw; */
   margin: auto;
 }
+
 .container {
   width: 80%;
   margin: 0 auto;
