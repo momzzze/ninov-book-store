@@ -6,7 +6,7 @@ export interface AuthState {
     token: null | string;
     books: [];
     book: null | { name: string; author: string; _id: string };
-
+    genres: [];
 }
 
 
@@ -16,6 +16,7 @@ const initialState: AuthState = {
     token: null,
     books: [],
     book: null,
+    genres: [],
 };
 
 
@@ -37,16 +38,12 @@ export const authSlice = createSlice({
         setBooks: (state, action) => {
             state.books = action.payload.books;
         },
-        // setBook: (state, action)=>{
-        //    const updatedBooks=state.books.map((book)=>{
-        //     if(book._id === action.payload.book._id){
-        //         return action.payload.book;
-        //     }
-        //    });
-        //    state.books=updatedBooks;
-        // },
+        setGenres: (state, action) => {
+            state.genres = action.payload.genres;
+        },
+        
     }
 })
 
-export const { setMode, setLogin, setLogout, setBooks } = authSlice.actions;
+export const { setMode, setLogin, setLogout, setBooks,setGenres } = authSlice.actions;
 export default authSlice.reducer;
