@@ -13,6 +13,9 @@ import Contacts from "../pages/Contacts";
 import About from "../pages/About";
 import ManageBooks from "../pages/Admin/ManageBooks";
 import EditBooks from "../pages/Admin/EditBooks";
+import AddGenre from "../pages/Admin/AddGenre";
+import AddAuthor from "../pages/Admin/AddAuthor";
+import AddShipper from "../pages/Admin/AddShipper";
 
 const router = createBrowserRouter([
   {
@@ -62,13 +65,25 @@ const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
+        path: "/admin-dashboard/manage",
+        element: <ManageBooks />,
+      },
+      {
         path: "/admin-dashboard/upload",
         element: <UploadBook />,
       },
       {
-        path: "/admin-dashboard/manage",
-        element: <ManageBooks />,
+        path: "/admin-dashboard/add-genre",
+        element: <AddGenre />,
       },
+      {
+        path: "/admin-dashboard/add-shipper",
+        element: <AddShipper />,
+      },
+      {
+        path: "/admin-dashboard/add-author",
+        element: <AddAuthor />,
+      },      
       {
         path: "/admin-dashboard/edit-books/:id",
         element: <EditBooks />,
