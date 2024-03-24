@@ -4,9 +4,10 @@ import Sidebar from "./Sidebar";
 
 const DashboardLayout = () => {
   return (
-    <div className="dashboard-layout">
-      <Sidebar />
-      <Outlet />
+    <div className="dashboard-container">
+      <Sidebar>
+        <Outlet />
+      </Sidebar>
     </div>
   );
 };
