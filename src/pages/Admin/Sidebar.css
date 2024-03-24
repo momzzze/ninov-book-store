@@ -1,64 +1,77 @@
-.admin__container{
-    display: flex;
+.admin__container {
+  display: flex;
 }
 
-main{
-    width: 100%;
-    padding: 20px;
+main {
+  width: 100%;
+  padding: 20px;
 }
 
-.admin__sidebar{
-    background: var(--classic-blue-600);
-    color: #fff;
-    height: 100vh;
-    width: 250px;
-    position: sticky; 
-    top: 0;
-    overflow-y: auto; 
-    transition: width 0.3s ease; 
-    scrollbar-width: none;
+.admin__sidebar {
+  background: var(--classic-blue-600);
+  color: #fff;
+  height: 100vh;
+  width: 250px;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+  scrollbar-width: none;
 }
 .admin__sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.top_section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 15px;
+  border-bottom: 1px solid #fff;
+}
+
+.display-block {
+  display: block;
+}
+
+.logo {
+  font-size: 25px;
+}
+
+.bars {
+  display: flex;
+  font-size: 25px;
+  margin-left: 50px;
+}
+
+.link {
+  display: flex;
+  color: #fff;
+  padding: 10px 15px;
+  gap: 1rem;
+  align-items: center;
+}
+.link:hover {
+  background: var(--classic-blue-300);
+  color: var(--classic-blue-600);
+  transition: all 0.3s;
+}
+
+.admin_active {
+  background: var(--classic-blue-300);
+  color: var(--classic-blue-700);
+}
+
+.icon,
+.link_text {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 375px) {
+  .admin__sidebar {
+    width: 50px;
+  }
+  .logo {
     display: none;
-}
-
-.top_section{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 15px;
-    border-bottom: 1px solid #fff;
-}
-
-.logo{
-    font-size: 25px;
-}
-
-.bars{
-    display: flex;
-    font-size: 25px;
-    margin-left: 50px;
-}
-
-.link{
-    display: flex;
-    color: #fff;
-    padding: 10px 15px;
-    gap: 1rem;
-    align-items: center;
-}
-.link:hover{
-    background: var(--classic-blue-300);
-    color: var(--classic-blue-600);
-    transition: all 0.3s;
-}
-
-.admin_active{
-    background: var(--classic-blue-300);
-    color: var(--classic-blue-700);
-}
-
-.icon, .link_text{
-    font-size: 1.5rem;
-
+  }
 }
