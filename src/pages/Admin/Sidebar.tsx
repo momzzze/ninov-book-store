@@ -2,7 +2,6 @@ import {
   FaTh,
   FaBars,
   FaBookMedical,
-  FaEdit,
   FaBackspace,
   FaUserSecret,
 } from "react-icons/fa";
