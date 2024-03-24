@@ -1,0 +1,56 @@
+.upload-book-container {
+    background-color: var(--grey-10);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 50vw;
+    margin: auto;
+    
+  }
+  
+  .upload-book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 80%;
+    margin: auto;
+  }
+  
+  .upload-book-form input,
+  .upload-book-form textarea,
+  .upload-book-form select {
+    padding: 0.8rem;
+    border: 1px solid var(--grey-300);
+    border-radius: 4px;
+    background-color: var(--grey-50);
+    transition: var(--tran-03);
+  }
+  
+  .upload-book-form input:focus,
+  .upload-book-form textarea:focus,
+  .upload-book-form select:focus {
+    outline: none;
+    border-color: var(--classic-blue-500);
+    background-color: var(--grey-0);
+  }
+  
+  .upload-book-form button {
+    padding: 0.8rem 2rem;
+    background-color: var(--classic-blue-700);
+    color: var(--grey-0);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--tran-03);
+  }
+  
+  .upload-book-form button:hover {
+    background-color: var(--classic-blue-600);
+  }
+  
+  .admin_form_title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--classic-blue-700);
+    text-align: center;
+  }

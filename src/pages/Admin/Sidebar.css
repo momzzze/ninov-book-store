@@ -12,6 +12,14 @@ main{
     color: #fff;
     height: 100vh;
     width: 250px;
+    position: sticky; 
+    top: 0;
+    overflow-y: auto; 
+    transition: width 0.3s ease; 
+    scrollbar-width: none;
+}
+.admin__sidebar::-webkit-scrollbar {
+    display: none;
 }
 
 .top_section{
