@@ -47,10 +47,134 @@
   .upload-book-form button:hover {
     background-color: var(--classic-blue-600);
   }
-  
+
   .admin_form_title{
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--classic-blue-700);
     text-align: center;
+  }
+
+  .container__dashboard {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .container__dashboard h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--classic-blue-700);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .container__dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .container__dashboard th,
+  .container__dashboard td {
+    padding: 0.5rem;
+    border: 1px solid var(--grey-300);
+  }
+  
+  .container__dashboard th {
+    background-color: var(--grey-200);
+    color: var(--grey-700);
+  }
+  
+  .container__dashboard tr:nth-child(even) {
+    background-color: var(--grey-50);
+  }
+  
+  .container__dashboard tr:hover {
+    background-color: var(--grey-100);
+  }
+  
+  .container__dashboard button {
+    padding: 0.5rem 1rem;
+    background-color: var(--classic-blue-700);
+    color: var(--grey-0);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--tran-03);
+  }
+  
+  .container__dashboard button:hover {
+    background-color: var(--classic-blue-600);
+  }
+  .container__dashboard button.delete {
+    background-color: var(--red-700);
+  }
+  
+  .container__dashboard button.delete:hover {
+    background-color: var(--red-400);
+  }
+  .container__dashboard td.manage{
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    .container__dashboard table {
+      font-size: 0.8rem; 
+    }
+  
+    .container__dashboard th,
+    .container__dashboard td {
+      padding: 0.3rem;
+    }
+  
+    .container__dashboard button {
+      padding: 0.3rem 0.8rem; 
+    }
+  
+    .container__dashboard h2 {
+      font-size: 1.2rem;
+    }
+  }
+  @media screen and (max-width: 300px) {
+    .container__dashboard table {
+      font-size: 0.6rem; 
+    }
+  
+    .container__dashboard th,
+    .container__dashboard td {
+      padding: 0.2rem; 
+    }
+  
+    .container__dashboard button {
+      padding: 0.2rem 0.5rem; 
+    }
+  
+    .container__dashboard h2 {
+      font-size: 1rem;
+    }
+  }
+  .upload-book-form .genre-checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .upload-book-form .genre-checkbox-label {
+    display: flex;
+    align-items: center;
+  }
+  
+  .upload-book-form .genre-checkbox {
+    margin-right: 0.5rem;
+  }
+  
+  .upload-book-form .genre-checkbox-input {
+    margin-right: 0.3rem;
+  }
+  
+  .upload-book-form .genre-checkbox-input:checked + .genre-checkbox-label::before {
+    content: "\\2714";
+    font-size: 1.2rem;
+    color: var(--classic-blue-700);
   }
