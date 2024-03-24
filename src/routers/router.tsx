@@ -16,6 +16,7 @@ import EditBooks from "../pages/Admin/EditBooks";
 import AddGenre from "../pages/Admin/AddGenre";
 import AddAuthor from "../pages/Admin/AddAuthor";
 import AddShipper from "../pages/Admin/AddShipper";
+import AddPublisher from "../pages/Admin/AddPublisher";
 
 const router = createBrowserRouter([
   {
@@ -83,12 +84,17 @@ const router = createBrowserRouter([
       {
         path: "/admin-dashboard/add-author",
         element: <AddAuthor />,
-      },      
+      },
+      {
+        path: "/admin-dashboard/add-publisher",
+        element: <AddPublisher />,
+      },
       {
         path: "/admin-dashboard/edit-books/:id",
         element: <EditBooks />,
-        loader: ({params})=> fetch(`https://book-api-05ci.onrender.com/books/${params.id}`)
-      }
+        loader: ({ params }) =>
+          fetch(`https://book-api-05ci.onrender.com/books/${params.id}`),
+      },
     ],
   },
 ]);

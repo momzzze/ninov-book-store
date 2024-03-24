@@ -3,6 +3,7 @@ import {
   FaBars,
   FaBookMedical,
   FaBackspace,
+  FaUserEdit ,
   FaUserSecret,
 } from "react-icons/fa";
 import { MdOutlineManageHistory } from "react-icons/md";
@@ -39,6 +40,11 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
       name: "Add Genre",
       icon: <GiDramaMasks />,
       path: "/admin-dashboard/add-genre",
+    },
+    {
+      name: "Add Publisher",
+      icon: <FaUserEdit />,
+      path: "/admin-dashboard/add-publisher",
     },
     {
       name: "Add Author",

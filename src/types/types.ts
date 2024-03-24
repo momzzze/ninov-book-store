@@ -60,3 +60,13 @@ export type ShipperWithId = {
     phoneNumber: string,
     _id: string
 }
+
+// -------------------Publisher-------------------
+export type Publisher = {
+    name: string,
+}
+
+export type PublisherWithId = {
+    name: string,
+    _id: string
+}
