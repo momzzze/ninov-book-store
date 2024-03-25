@@ -1,4 +1,3 @@
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -50,7 +49,7 @@ const AddPublisher: React.FC = () => {
           required
         />
         {errors.name && <p className="error-message">{errors.name.message}</p>}
-        
+
         <button disabled={isSubmitting} type="submit">
           {" "}
           {isSubmitting ? "Loading..." : "Add Publisher"}

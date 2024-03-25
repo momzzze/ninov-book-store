@@ -17,3 +17,13 @@ export const addPublisher = async (data: Publisher) => {
         return error
     }
 }
+
+export const getPublishersFromApi = async () => {
+    try {
+        const response = await fetch('https://book-api-05ci.onrender.com/publishers');
+        const dataOutput = await response.json();
+        return dataOutput;
+    } catch (error) {
+        return error;
+    }
+}
