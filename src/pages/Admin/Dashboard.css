@@ -101,7 +101,19 @@
     cursor: pointer;
     transition: var(--tran-03);
   }
-  
+
+  .container__dashboard .edit-link{
+    padding: 0.5rem 1rem;
+    background-color: var(--classic-blue-700);
+    color: var(--grey-0);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--tran-03);
+  }
+  .container__dashboard .edit-link:hover {
+    background-color: var(--classic-blue-600);
+  }
   .container__dashboard button:hover {
     background-color: var(--classic-blue-600);
   }
@@ -177,4 +189,84 @@
     content: "\\2714";
     font-size: 1.2rem;
     color: var(--classic-blue-700);
+  }
+  @media screen and (max-width: 830px) {
+    .container__dashboard table {
+      font-size: 0.7rem; 
+    }
+  
+    .container__dashboard th,
+    .container__dashboard td {
+      padding: 0.3rem; 
+    }
+  
+    .container__dashboard button {
+      padding: 0.3rem 0.7rem; 
+    }
+  
+    .container__dashboard h2 {
+      font-size: 1.3rem; 
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .container__dashboard table {
+      font-size: 0.6rem; 
+    }
+  
+    .container__dashboard th,
+    .container__dashboard td {
+      padding: 0.2rem; 
+    }
+  
+    .container__dashboard button {
+      padding: 0.2rem 0.5rem; 
+    }
+  
+    .container__dashboard h2 {
+      font-size: 1rem; 
+    }
+  }
+
+  @media screen and (max-width: 530px) {
+    .container__dashboard table {
+      font-size: 0.5rem; 
+    }
+  
+    .container__dashboard th,
+    .container__dashboard td {
+      padding: 0.1rem; 
+    }
+  
+    .container__dashboard button {
+      padding: 0.1rem 0.3rem; 
+    }
+  
+    .container__dashboard h2 {
+      font-size: 0.8rem; 
+    }
+  }
+
+  @media screen and (max-width: 470px) {
+    .container__dashboard table {
+      font-size: 0.4rem; 
+    }
+  
+    .container__dashboard th,
+    .container__dashboard td {
+      padding: 0.1rem; 
+    }
+  
+    .container__dashboard button {
+      padding: 0.1rem 0.2rem; 
+    }
+  
+    .container__dashboard h2 {
+      font-size: 0.6rem; 
+    }
+    .manage{
+        font-size: 0.2rem;                
+    }
+    .manage button{
+        font-size: 0.5rem;
+    }
   }

@@ -14,7 +14,7 @@ export type Genre = {
     name: string
 }
 
-export type GenreWithId={
+export type GenreWithId = {
     name: string,
     _id: string
 }
@@ -41,12 +41,44 @@ export type AuthorWithId = {
 
 // -------------------Book-------------------
 export type Book = {
-    name: string,
+    title: string,
+    description: string,
+    imageUrl: string,
+    publishedDate: string,
+    price: number,
+    pages: number,
+    availableQuantity: number,
+    genre: string,
+    author: string,
+    publisher: string,
 }
 
 export type BookWithId = {
-    name: string,
+    title: string,
+    description: string,
+    imageUrl: string,
+    publishedDate: string,
+    price: number,
+    pages: number,
+    availableQuantity: number,
+    genre: string,
+    author: string,
+    publisher: string,
     _id: string
+}
+
+export type PopulatedBook ={
+    _id: string,
+    title: string,
+    description: string,
+    imageUrl: string,
+    publishedDate: string,
+    price: number,
+    pages: number,
+    availableQuantity: number,
+    genre: GenreWithId,
+    author: AuthorWithId,
+    publisher: PublisherWithId,
 }
 
 // -------------------Shipper-------------------
