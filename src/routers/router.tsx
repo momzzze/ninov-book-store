@@ -12,11 +12,11 @@ import Login from "../pages/Auth/Login";
 import Contacts from "../pages/Contacts";
 import About from "../pages/About";
 import ManageBooks from "../pages/Admin/ManageBooks";
-import EditBooks from "../pages/Admin/EditBooks";
 import AddGenre from "../pages/Admin/AddGenre";
 import AddAuthor from "../pages/Admin/AddAuthor";
 import AddShipper from "../pages/Admin/AddShipper";
 import AddPublisher from "../pages/Admin/AddPublisher";
+import EditBook from "../pages/Admin/EditBook";
 
 const router = createBrowserRouter([
   {
@@ -91,9 +91,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/admin-dashboard/edit-books/:id",
-        element: <EditBooks />,
-        loader: ({ params }) =>
-          fetch(`https://book-api-05ci.onrender.com/books/${params.id}`),
+        element: <EditBook />,
       },
     ],
   },
