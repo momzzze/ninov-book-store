@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { BookWithId } from '../types/types';
 
 export interface AuthState {
     mode: 'light' | 'dark';
     user: null | { username: string; email: string, role: string, userId: string };
     token: null | string;
-    books: [];
+    books: BookWithId[];
     book: null | { name: string; author: string; _id: string };
     genres: [];
 }
@@ -41,9 +42,22 @@ export const authSlice = createSlice({
         setGenres: (state, action) => {
             state.genres = action.payload.genres;
         },
-        
+        setBook: (state, action) => {
+            state.book = action.payload.book;
+        },
+        deleteBook: (state, action) => {
+            state.books = state.books.filter((book: BookWithId) => book._id !== action.payload.bookId);
+        },
+        updateBook: (state, action) => {
+            state.books = state.books.map((book: BookWithId) => {
+                if (book._id === action.payload.book._id) {
+                    return { ...book, ...action.payload.book };
+                }
+                return book;
+            });
+        },
     }
 })
 
-export const { setMode, setLogin, setLogout, setBooks,setGenres } = authSlice.actions;
+export const { setMode, setLogin, setLogout, setBooks, setGenres,updateBook } = authSlice.actions;
 export default authSlice.reducer;
